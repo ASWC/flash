@@ -1,0 +1,21 @@
+{
+  "name": "flash",
+  "version": "1.0.0",
+  "description": "base flash packages",
+  "main": "index.js",
+  "dependencies": {
+    "pixi.js": "^4.8.0",
+    "screenfull": "^3.3.2",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/pixi.js": "^4.8.0",
+    "@types/screenfull": "^3.3.1",
+    "@types/webfontloader": "^1.6.29"
+  },
+  "scripts": {
+    "build:flash": "tsc"
+  },
+  "author": "jean mas",
+  "license": "ISC"
+}
