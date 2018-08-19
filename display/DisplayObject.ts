@@ -172,9 +172,10 @@ export class DisplayObject extends EventDispatcher
         return new Rectangle(rect.x, rect.y, rect.width, rect.height);
     }
 
-    public getBounds(targetCoordinateSpace:DisplayObject):Rectangle
+    public getBounds(targetCoordinateSpace:DisplayObject = null):Rectangle
     {
-        return null;
+        var rect:PIXI.Rectangle = this._innerCompContainer.getBounds(true);
+        return new Rectangle(rect.x, rect.y, rect.width, rect.height);
     }
 
     public localToGlobal(coordinates:Point):Point
