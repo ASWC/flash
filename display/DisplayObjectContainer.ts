@@ -2,6 +2,7 @@ import { Event } from '../events/Event';
 import { MouseEvent } from '../events/MouseEvent';
 import { Point } from '../geom/Point';
 import { DisplayObject } from './DisplayObject';
+import { Tracer } from '../../superduperinc/flash/log/Tracer';
 
 export class DisplayObjectContainer extends DisplayObject
 {
@@ -133,7 +134,7 @@ export class DisplayObjectContainer extends DisplayObject
     }
 
     public addEventListener(type:string, listener:Function, scope:any = null, priority:number = 0, weakReference:boolean = false):void
-    {        
+    {     
         if(this.isRegistered(type, listener))
         {
             return;
@@ -219,6 +220,12 @@ export class DisplayObjectContainer extends DisplayObject
         var pos:any;
         if(event)
         {        
+            if(this._className == "CodeSquare")
+            {
+                //Tracer.show(this._className + " dispatch " + event.type)
+                //Tracer.show(this.instanceName + " dispatch " + event.type)
+            }
+            
             var dispatchedEvent:MouseEvent = new MouseEvent(event.type);            
             dispatchedEvent.currentTarget = this;
             dispatchedEvent._legacyTarget = event.target;
