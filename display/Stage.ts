@@ -131,10 +131,8 @@ export class Stage extends Sprite implements IRateDelegate
         {
             if(this._cachedData.originalEvent)
             {
-                Tracer.show('drag has original event')
                 if(this._cachedData.originalEvent['y'] != undefined)
                 {
-                    Tracer.show('drag has y property')
                     this.dragging = true;
                     this._pageInitialPosition = window.pageYOffset;
                     this._mouseInitialPosition = this._cachedData.originalEvent['y'];
@@ -143,9 +141,6 @@ export class Stage extends Sprite implements IRateDelegate
                 }
                 else if(this._cachedData.originalEvent['touches'][0]['clientY'])
                 {
-                    Tracer.reveal(this._cachedData.originalEvent['touches'][0])
-                    Tracer.show('drag has screenY property: ' + this._cachedData.originalEvent['touches'][0]['clientY'])
-                    Tracer.show('drag has offset: ' + window.pageYOffset)
                     this.dragging = true;
                     this._pageInitialPosition = window.pageYOffset;
                     this._mouseInitialPosition = this._cachedData.originalEvent['touches'][0]['clientY'] - this._pageInitialPosition;
@@ -164,7 +159,6 @@ export class Stage extends Sprite implements IRateDelegate
     {
         if(this.dragging)
         {
-            Tracer.show('stage is drag moving')
             if(this._cachedData.originalEvent['y'] != undefined)
             {
                 let newpos:number = this._totalPageDistance - event.data.originalEvent['y'];
